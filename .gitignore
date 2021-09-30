@@ -1,2 +1,3 @@
 /.idea
-/HealRemote/HealRemote/__pycache__
+/HealRemote/*/__pycache__
+db.sqlite3
