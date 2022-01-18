@@ -17,6 +17,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+ //Import react-native-splash-screen.
+ import SplashScreen from  "react-native-splash-screen";
 
 import {
   Colors,
@@ -58,6 +60,10 @@ const App: () => Node = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  React.useEffect(() => {
+    SplashScreen.hide();
+  });
 
   return (
     <SafeAreaView style={backgroundStyle}>
