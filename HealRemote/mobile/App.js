@@ -17,8 +17,11 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
- //Import react-native-splash-screen.
- import SplashScreen from  "react-native-splash-screen";
+//Import react-native-splash-screen.
+import SplashScreen from  "react-native-splash-screen";
+
+// React Navigation Imports
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import {
   Colors,
