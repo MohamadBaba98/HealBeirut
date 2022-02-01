@@ -1,23 +1,23 @@
-import HomeScreen from './';
-import AboutScreen from './components/AboutScreen';
-import { createStackNavigator, createAppContainer } from "react-navigation";
-
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from '@react-navigation/stack';
+import LoginScreen from '../screens/authentication/login';
 
 const AppNavigator = createStackNavigator({
     Login: {
-        screen: HomeScreen
+        screen: LoginScreen
     },
     Signup: {
-        screen: AboutScreen
-    },
-    About: {
-        screen: AboutScreen
+        screen: LoginScreen
     },
     ForgotPassword: {
-        screen: ForgotPassword
+        screen: LoginScreen
     },
     Confirmation: {
-        screen: ConfirmationScreen
+        screen: LoginScreen
     }
+}, {
+    initialRouteName: 'Login', 
 });
+
+export default createAppContainer(AppNavigator);
   
