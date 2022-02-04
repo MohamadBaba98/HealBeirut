@@ -8,7 +8,6 @@
 
 import React from 'react';
 import type {Node} from 'react';
-//Import react-native-splash-screen.
 import SplashScreen from  "react-native-splash-screen";
 
 // React Navigation Imports
