@@ -38,6 +38,7 @@ const LoginScreen = ({navigation}) => {
         <Button
             title="Forgot Password?"
             onPress={() => navigation.navigate('ForgotPassword')}
+            style={styles.forgotPasswordButton}
         />
         <Button
             title="Don't have an account? Create an Account"
@@ -52,13 +53,20 @@ const styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
-       //  backgroundColor: colors.hbBlue,
+        backgroundColor: colors.hbBlue,
     },
     input: {
         height: 40,
         margin: 12,
         borderWidth: 1,
         padding: 10,
+        backgroundColor: 'white',
+    },
+    forgotPasswordButton: {
+        color: colors.hbRed,
+    },
+    loginButton: {
+
     },
 });
 
