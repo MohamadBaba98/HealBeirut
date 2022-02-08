@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
-import { createAccount } from '../../api/mock';
+import { createAccount } from '@api/mock';
 
 const SignupScreen = ({navigation}) => {
   const signupUser = () => {

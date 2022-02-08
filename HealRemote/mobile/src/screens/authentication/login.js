@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
-import { login } from '../../api/mock';
+import { login } from '@api/mock';
+import { colors } from '@themes/colors';
 
 const LoginScreen = ({navigation}) => {
+    console.log(colors);
     const loginUser = () => {
         login(username, password)
             .then(() => {
@@ -15,7 +17,7 @@ const LoginScreen = ({navigation}) => {
     const [password, onChangePassword] = React.useState("");
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.viewContainer}>
         <Text>healremote</Text>
         <TextInput
             style={styles.input}
@@ -46,6 +48,12 @@ const LoginScreen = ({navigation}) => {
 }
 
 const styles = StyleSheet.create({
+    viewContainer: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+       //  backgroundColor: colors.hbBlue,
+    },
     input: {
         height: 40,
         margin: 12,
