@@ -24,12 +24,27 @@ export const login = (email, password, shouldSucceed = true) => {
 };
 
 // Mock Signup functionality
-export const createAccount = (email, password, shouldSucceed = true) => {
-    console.log(email, password);
+export const createAccount = (email, password, confirmPassword, shouldSucceed = true) => {
+    console.log(email, password, confirmPassword);
+
+    if (password != confirmPassword) {
+        return mockFailure({ error: 500, message: 'Passwords Did Not Match' });
+    }
 
     if (!shouldSucceed) {
         return mockFailure({ error: 500, message: 'Something went wrong!' });
     }
 
     return mockSuccess({ auth_token: 'successful_fake_token' });
+};
+
+// Mock Forgot Password Functionality
+export const forgotPassword = (email, newPassword ,shouldSucceed = true) => {
+    console.log(email, newPassword);
+
+    if (!shouldSucceed) {
+        return mockFailure({ error: 500, message: 'Something went wrong!' });
+    }
+
+    return mockSuccess("Password Change Request Sent");
 };

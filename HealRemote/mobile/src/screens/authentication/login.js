@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
-import { onChange } from 'react-native-reanimated';
 import { login } from '../../api/mock';
 
 const LoginScreen = ({navigation}) => {
@@ -18,7 +17,6 @@ const LoginScreen = ({navigation}) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>healremote</Text>
-        <Text>Login</Text>
         <TextInput
             style={styles.input}
             onChangeText={onChangeUsername}
