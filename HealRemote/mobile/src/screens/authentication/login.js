@@ -4,7 +4,7 @@ import { login } from '../../api/mock';
 
 const LoginScreen = ({navigation}) => {
     const loginUser = () => {
-        login('dorimouawad@test.healbeirut', 'password')
+        login(username, password)
             .then(() => {
                 navigation.navigate('Home');
             })
@@ -19,14 +19,14 @@ const LoginScreen = ({navigation}) => {
         <Text>healremote</Text>
         <TextInput
             style={styles.input}
-            onChangeText={onChangeUsername}
+            onChangeText={(username) => onChangeUsername(username)}
             value={username}
             placeholder="Username"
             keyboardType="default"
         />
         <TextInput
             style={styles.input}
-            onChangeText={onChangePassword}
+            onChangeText={(password) => onChangePassword(password)}
             value={password}
             placeholder="Password"
             textContentType="password"

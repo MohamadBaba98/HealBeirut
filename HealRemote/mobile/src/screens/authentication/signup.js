@@ -19,14 +19,14 @@ const SignupScreen = ({navigation}) => {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <TextInput
           style={styles.input}
-          onChangeText={onChangeUsername}
+          onChangeText={(username) => onChangeUsername(username)}
           value={username}
           placeholder="Username"
           keyboardType="default"
       />
       <TextInput
           style={styles.input}
-          onChangeText={onChangePassword}
+          onChangeText={(password) => onChangePassword(password)}
           value={password}
           placeholder="Password"
           textContentType="password"
@@ -34,7 +34,7 @@ const SignupScreen = ({navigation}) => {
       />
       <TextInput
         style={styles.input}
-        onChangeText={onChangeConfirmPassword}
+        onChangeText={(confirmPassword) => onChangeConfirmPassword(confirmPassword)}
         value={confirmPassword}
         placeholder="Confirm Password"
         textContentType="password"
