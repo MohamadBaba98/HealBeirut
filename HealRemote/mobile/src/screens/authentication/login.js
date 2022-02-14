@@ -4,7 +4,6 @@ import { login } from '@api/mock';
 import { colors } from '@themes/colors';
 
 const LoginScreen = ({navigation}) => {
-    console.log(colors);
     const loginUser = () => {
         login(username, password)
             .then(() => {
