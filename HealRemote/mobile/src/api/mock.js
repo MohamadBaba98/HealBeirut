@@ -24,8 +24,8 @@ export const login = (email, password, shouldSucceed = true) => {
 };
 
 // Mock Signup functionality
-export const createAccount = (email, password, confirmPassword, shouldSucceed = true) => {
-    console.log(email, password, confirmPassword);
+export const createAccount = (fullName, email, username, password, confirmPassword, role, shouldSucceed = true) => {
+    console.log(fullName, username, email, password, confirmPassword, role);
 
     if (password != confirmPassword) {
         return mockFailure({ error: 500, message: 'Passwords Did Not Match' });
