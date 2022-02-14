@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { login } from '@api/mock';
 import { colors } from '@themes/colors';
 
@@ -24,6 +24,9 @@ const LoginScreen = ({navigation}) => {
             value={username}
             placeholder="Username"
             keyboardType="default"
+            autoCapitalize={false}
+            autoComplete={false}
+            autoCorrect={false}
         />
         <TextInput
             style={styles.input}
@@ -32,17 +35,19 @@ const LoginScreen = ({navigation}) => {
             placeholder="Password"
             textContentType="password"
             secureTextEntry={true}
+            autoCapitalize={false}
+            autoComplete={false}
+            autoCorrect={false}
         />
-        <Button title="Login" onPress={loginUser} />
-        <Button
-            title="Forgot Password?"
-            onPress={() => navigation.navigate('ForgotPassword')}
-            style={styles.forgotPasswordButton}
-        />
-        <Button
-            title="Don't have an account? Create an Account"
-            onPress={() => navigation.navigate('Signup')}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+            <Text style={styles.forgotPasswordButtonText}>Forgot Password?</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('Login')}>
+            <Text style={styles.loginButtonTextColor}>CONTINUE</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.signupButton} onPress={() => navigation.navigate('Signup')}>
+            <Text style={styles.signupButtonWhiteTextColor}>Don't have an account? <Text style={styles.signupButtonRedTextColor}>Create an Account</Text></Text>
+        </TouchableOpacity>
     </View>
   );
 }
@@ -60,12 +65,31 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         backgroundColor: 'white',
+        width: "80%",
+        color: colors.hbBlue,
     },
-    forgotPasswordButton: {
+    forgotPasswordButtonText: {
         color: colors.hbRed,
     },
     loginButton: {
-
+        width: "90%",
+        height: 50,
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 40,
+        backgroundColor: colors.hbDarkGrey,
+    },
+    loginButtonTextColor: {
+        color: 'white',
+    },
+    signupButtonWhiteTextColor: {
+        color: 'white',
+    },
+    signupButtonRedTextColor: {
+        color: colors.hbRed,
+    },
+    signupButton: {
+        marginTop: 40,
     },
 });
 
