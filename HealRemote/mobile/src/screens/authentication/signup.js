@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
-import { createAccount } from '@api/mock';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import DropDownPicker from 'react-native-dropdown-picker';
+
 import { colors } from '@themes/colors';
+import { createAccount } from '@api/mock';
 
 const SignupScreen = ({navigation}) => {
   const signupUser = () => {
@@ -21,7 +23,16 @@ const SignupScreen = ({navigation}) => {
   const [username, onChangeUsername] = React.useState("");
   const [password, onChangePassword] = React.useState("");
   const [confirmPassword, onChangeConfirmPassword] = React.useState("");
-  const [role, onChangeRole] = React.useState("");
+
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState(null);
+  const [items, setItems] = React.useState([
+    {label: 'Patient', value: 'patient'},
+    {label: 'Provider', value: 'provider'},
+    {label: 'Admin', value: 'admin'}
+
+  ]);
+  const [selectedValue, setSelectedValue] = React.useState("");
 
   return (
     <View style={styles.viewContainer}>
@@ -39,8 +50,8 @@ const SignupScreen = ({navigation}) => {
         value={email}
         placeholder="Email"
         keyboardType="email-address"
-        autoCapitalize={false}
-        autoComplete={false}
+        autoCapitalize="none"
+        autoComplete="off"
         autoCorrect={false}
       />
       <TextInput
@@ -49,8 +60,8 @@ const SignupScreen = ({navigation}) => {
         value={username}
         placeholder="Username"
         keyboardType="default"
-        autoCapitalize={false}
-        autoComplete={false}
+        autoCapitalize="none"
+        autoComplete="off"
         autoCorrect={false}
       />
       <TextInput
@@ -60,8 +71,8 @@ const SignupScreen = ({navigation}) => {
         placeholder="Password"
         textContentType="password"
         secureTextEntry={true}
-        autoCapitalize={false}
-        autoComplete={false}
+        autoCapitalize="none"
+        autoComplete="off"
         autoCorrect={false}
       />
       <TextInput
@@ -71,16 +82,19 @@ const SignupScreen = ({navigation}) => {
         placeholder="Confirm Password"
         textContentType="password"
         secureTextEntry={true}
-        autoCapitalize={false}
+        autoCapitalize="none"
         autoComplete={false}
         autoCorrect={false}
       />
-      <TextInput
+      <DropDownPicker
         style={styles.input}
-        onChangeText={(role) => onChangeRole(role)}
-        value={role}
+        open={open}
+        value={value}
+        items={items}
+        setOpen={setOpen}
+        setValue={setValue}
+        setItems={setItems}
         placeholder="Role"
-        keyboardType="default"
       />
       <TouchableOpacity onPress={() => termsAndConditions()}>
         { /* TODO: We need to update this to point to our Terms and Conditions page  */}

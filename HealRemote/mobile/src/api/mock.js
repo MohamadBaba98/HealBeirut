@@ -39,7 +39,7 @@ export const createAccount = (fullName, email, username, password, confirmPasswo
 };
 
 // Mock Forgot Password Functionality
-export const forgotPassword = (email, newPassword ,shouldSucceed = true) => {
+export const forgotPassword = (email, newPassword, shouldSucceed = true) => {
     console.log(email, newPassword);
 
     if (!shouldSucceed) {

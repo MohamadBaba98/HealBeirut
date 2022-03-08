@@ -24,8 +24,8 @@ const LoginScreen = ({navigation}) => {
             value={username}
             placeholder="Username"
             keyboardType="default"
-            autoCapitalize={false}
-            autoComplete={false}
+            autoCapitalize="none"
+            autoComplete="off"
             autoCorrect={false}
         />
         <TextInput
@@ -35,8 +35,8 @@ const LoginScreen = ({navigation}) => {
             placeholder="Password"
             textContentType="password"
             secureTextEntry={true}
-            autoCapitalize={false}
-            autoComplete={false}
+            autoCapitalize="none"
+            autoComplete="off"
             autoCorrect={false}
         />
         <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
