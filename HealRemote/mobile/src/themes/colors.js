@@ -5,11 +5,9 @@
     or are repeating colors should be stored here.
 */
 
-const colors = {
+export const colors = {
     hbBlue: '#48BBED',
     hbRed: '#F70505',
     hbDarkGrey: '#565656',
     hbLightGray: '#F3F3F3',
 };
-
-export default colors;
