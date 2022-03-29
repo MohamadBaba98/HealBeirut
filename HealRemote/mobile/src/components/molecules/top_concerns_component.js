@@ -13,7 +13,6 @@ const TopConcernsComponent = ({props, navigation}) => {
     return (
         <View>
             <Text>{props.topConcernsText}</Text>
-
         </View>
     );
 }
