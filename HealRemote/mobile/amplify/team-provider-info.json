@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-healremote-dev-190914-authRole",
+      "UnauthRoleArn": "arn:aws:iam::796433094015:role/amplify-healremote-dev-190914-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::796433094015:role/amplify-healremote-dev-190914-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-healremote-dev-190914-deployment",
+      "UnauthRoleName": "amplify-healremote-dev-190914-unauthRole",
+      "StackName": "amplify-healremote-dev-190914",
+      "StackId": "arn:aws:cloudformation:us-west-1:796433094015:stack/amplify-healremote-dev-190914/3cfe5180-af05-11ec-9a03-06f5121acc9f",
+      "AmplifyAppId": "d1y5ky651gp5xv"
+    }
+  }
+}
