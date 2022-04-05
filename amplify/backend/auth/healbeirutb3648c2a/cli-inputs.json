@@ -1,0 +1,48 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "healbeirutb3648c2a_identitypool_b3648c2a",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "healbeb3648c2a",
+    "userPoolName": "healbeirutb3648c2a_userpool_b3648c2a",
+    "autoVerifiedAttributes": [
+      "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+      "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+      "email"
+    ],
+    "aliasAttributes": [],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+      "email"
+    ],
+    "userpoolClientReadAttributes": [
+      "email"
+    ],
+    "userpoolClientLambdaRole": "healbeb3648c2a_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "b3648c2a",
+    "resourceName": "healbeirutb3648c2a",
+    "authSelections": "identityPoolAndUserPool",
+    "useDefault": "default",
+    "usernameAttributes": [
+      "email"
+    ],
+    "userPoolGroupList": [],
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true
+  }
+}
