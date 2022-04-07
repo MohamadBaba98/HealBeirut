@@ -4,7 +4,7 @@ import { Auth } from 'aws-amplify';
     Makes call via cognito API to signup a user with the following attributes:
     Email, Password, FullName, and Role
 */
-async function signUp(email, password, fullName, role) {
+export async function signUp(email, password, fullName, role) {
     try {
         const { user } = await Auth.signUp({
             email,
@@ -14,18 +14,22 @@ async function signUp(email, password, fullName, role) {
                 role,
             }
         });
-        console.log(user);
+
+        return user;
     } catch (error) {
         console.log('error signing up:', error);
+        return error;
     }
 }
 
 /* SignIn:
     Makes call via cognito API to signin a user with their email and password
 */
-async function signIn(username, password) {
+export async function signIn(username, password) {
     try {
         const user = await Auth.signIn(username, password);
+
+        return user;
     } catch (error) {
         console.log('error signing in', error);
     }
@@ -34,7 +38,7 @@ async function signIn(username, password) {
 /* Confirm Sign Up:
     Makes call via cognito API to confirm the users account with a verification code
 */
-async function confirmSignUp(email, code) {
+export async function confirmSignUp(email, code) {
     try {
         await Auth.confirmSignUp(email, code);
     } catch (error) {
@@ -45,7 +49,7 @@ async function confirmSignUp(email, code) {
 /* Forgot Password:
     Makes call via cognito API to request for a password reset
 */
-async function forgotPassword(email) {
+export async function forgotPassword(email) {
     try {
         await Auth.forgotPassword(email)
         .then(data => console.log(data))
@@ -58,7 +62,7 @@ async function forgotPassword(email) {
 /* Forgot Password Submit:
     Makes call via cognito API to request for a password reset
 */
-async function forgotPasswordSubmit(email, code, newPassword) {
+export async function forgotPasswordSubmit(email, code, newPassword) {
     try {
         await Auth.forgotPasswordSubmit(email, code, newPassword)
         .then(data => console.log(data))
@@ -71,7 +75,7 @@ async function forgotPasswordSubmit(email, code, newPassword) {
 /* Change Password:
     Makes call via cognito API to change user password
 */
-async function changePassword(email, oldPassword, newPassword) {
+export async function changePassword(email, oldPassword, newPassword) {
     try {
         await Auth.currentAuthenticatedUser()
         .then(user => {
@@ -89,7 +93,7 @@ async function changePassword(email, oldPassword, newPassword) {
     Makes call via cognito API to resend a confirmation code in case
     a users code expires during the signup process
 */
-async function resendConfirmationCode(email) {
+export async function resendConfirmationCode(email) {
     try {
         await Auth.resendSignUp(email);
         console.log('code resent successfully');
@@ -101,7 +105,7 @@ async function resendConfirmationCode(email) {
 /* Sign Out:
     Makes call via cognito API to sign out a user
 */
-async function signOut() {
+export async function signOut() {
     try {
         await Auth.signOut();
     } catch (error) {

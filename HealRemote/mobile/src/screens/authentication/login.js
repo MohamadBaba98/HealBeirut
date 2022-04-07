@@ -1,13 +1,22 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+
+import { signIn } from '@api/auth';
 import { login } from '@api/mock';
 import { colors } from '@themes/colors';
 
 const LoginScreen = ({navigation}) => {
     const loginUser = () => {
-        login(username, password)
-            .then(() => {
+        // login(username, password)
+        //     .then(() => {
+        //         navigation.navigate('Home');
+        //     })
+        //     .catch((err) => console.log('error:', err.message));
+
+        signIn(username, password)
+            .then((user) => {
                 navigation.navigate('Home');
+                console.log(user);
             })
             .catch((err) => console.log('error:', err.message));
     };
